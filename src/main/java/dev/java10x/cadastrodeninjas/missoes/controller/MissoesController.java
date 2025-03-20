@@ -1,4 +1,4 @@
-package dev.java10x.cadastrodeninjas.missoes;
+package dev.java10x.cadastrodeninjas.missoes.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
