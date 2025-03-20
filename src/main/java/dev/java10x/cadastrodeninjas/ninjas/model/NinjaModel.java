@@ -1,7 +1,7 @@
-package dev.java10x.cadastrodeninjas.ninjas;
+package dev.java10x.cadastrodeninjas.ninjas.model;
 
 
-import dev.java10x.cadastrodeninjas.missoes.MissoesModel;
+import dev.java10x.cadastrodeninjas.missoes.model.MissoesModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
