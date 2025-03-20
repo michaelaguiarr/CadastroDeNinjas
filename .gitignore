@@ -38,3 +38,4 @@ build/
 .LSOverride
 
 .env
+data/
