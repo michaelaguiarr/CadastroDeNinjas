@@ -1,5 +1,7 @@
 package dev.java10x.cadastrodeninjas.ninjas.service;
 
+import dev.java10x.cadastrodeninjas.ninjas.dto.NinjaDTO;
+import dev.java10x.cadastrodeninjas.ninjas.dto.NinjaMapper;
 import dev.java10x.cadastrodeninjas.ninjas.model.NinjaModel;
 import dev.java10x.cadastrodeninjas.ninjas.repository.NinjaRepository;
 import org.springframework.stereotype.Service;
@@ -11,9 +13,11 @@ import java.util.Optional;
 public class NinjaService {
 
     private NinjaRepository ninjaRepository;
+    private NinjaMapper ninjaMapper;
 
-    public NinjaService(NinjaRepository ninjaRepository) {
+    public NinjaService(NinjaRepository ninjaRepository, NinjaMapper ninjaMapper) {
         this.ninjaRepository = ninjaRepository;
+        this.ninjaMapper = ninjaMapper;
     }
 
 
@@ -30,8 +34,10 @@ public class NinjaService {
     }
 
     // Criar um novo ninja
-    public NinjaModel criarNinja(NinjaModel ninja) {
-        return ninjaRepository.save(ninja);
+    public NinjaDTO criarNinja(NinjaDTO ninjaDTO) {
+        NinjaModel ninja = ninjaMapper.map(ninjaDTO);
+        ninja = ninjaRepository.save(ninja);
+        return ninjaMapper.map(ninja);
     }
 
     // Deletar o ninja - Tem que ser um metodo void
